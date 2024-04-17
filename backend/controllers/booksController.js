@@ -5,10 +5,21 @@ async function getAllBooks(req, res) {
         const books = await BooksModel.find({});
         res.json({books});        
     } catch (error) {
-        res.status(500).json({error})
+        res.status(500).json({error: error.message})
+    }
+}
+
+async function getBookWithId(req, res) {
+    const bookId = req.params.bookId;
+    try {
+        const books = await BooksModel.findOne({bookId})
+        res.json({books});        
+    } catch (error) {
+        res.status(500).json({error: error.message})
     }
 }
 
 module.exports = {
     getAllBooks,
+    getBookWithId,
 }
