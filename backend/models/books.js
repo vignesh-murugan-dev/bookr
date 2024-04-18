@@ -13,12 +13,8 @@ const BooksSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    imageUrl: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
+    year: {
+        type: Number,
         required: true,
     },
     genre: {
@@ -28,7 +24,23 @@ const BooksSchema = new mongoose.Schema({
     avgRating: {
         type: mongoose.Types.Decimal128,
         required: true,
-    }
+    },
+    aboutAuthor: {
+        type: String,
+        required: true,
+    },
+    authorImgUrl: {
+        type: String,
+        required: true,
+    },
+    bookImgUrl: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
 })
 
 const BooksModel = mongoose.model("Books", BooksSchema);
