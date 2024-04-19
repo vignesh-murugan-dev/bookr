@@ -4,6 +4,7 @@ const initialState = {
     books: [],
     bookData: [],
     isLoading: true,
+    foundBooks: [],
 }
 
 export const booksSlice = createSlice({
@@ -18,10 +19,13 @@ export const booksSlice = createSlice({
         },
         setIsLoading: (state, action) => {
             state.isLoading = action.payload;
-        }
+        },
+        setFoundBooks: (state, action) => {
+            state.foundBooks = action.payload;
+        },
     }
 })
 
-export const { setBooks, setBookData, setIsLoading } = booksSlice.actions;
+export const { setBooks, setBookData, setIsLoading, setFoundBooks } = booksSlice.actions;
 
 export default booksSlice.reducer;
