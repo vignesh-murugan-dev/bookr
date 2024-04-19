@@ -21,18 +21,18 @@ const BooksSchema = new mongoose.Schema({
         type: [{ type: String }],
         required: true,
     },
-    avgRating: {
-        type: mongoose.Types.Decimal128,
+    rating: {
+        type: Number,
         required: true,
     },
-    aboutAuthor: {
-        type: String,
-        required: true,
-    },
-    authorImgUrl: {
-        type: String,
-        required: true,
-    },
+    // aboutAuthor: {
+    //     type: String,
+    //     required: true,
+    // },
+    // authorImgUrl: {
+    //     type: String,
+    //     required: true,
+    // },
     bookImgUrl: {
         type: String,
         required: true,
