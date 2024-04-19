@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const { connectDB } = require("../config");
 const dotenv = require("dotenv");
 const booksRoute = require("../routes/booksRoute");
+const reviewsRoute = require("../routes/reviewsRoute");
 
 const app = express();
 const PORT = 3001 || process.env.PORT;
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/api/books", booksRoute);
+app.use("/api/reviews", reviewsRoute);
 
 app.listen(PORT, () => {
     connectDB();
