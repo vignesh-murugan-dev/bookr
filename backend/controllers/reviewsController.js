@@ -20,7 +20,6 @@ async function submitUserReview(req, res) {
 
 async function getAllReviews(req, res) {
     const bookId = req.params.bookId;
-    console.log(bookId)
     try {
         const reviews = await ReviewsModel.find({
             bookId

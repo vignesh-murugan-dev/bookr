@@ -9,10 +9,10 @@ const BooksSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    author: {
-        type: String,
-        required: true,
-    },
+    author: [{
+        type: mongoose.Types.ObjectId,
+        ref: "Authors"
+    }],
     year: {
         type: Number,
         required: true,

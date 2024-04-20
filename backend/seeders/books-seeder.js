@@ -5,16 +5,23 @@ const { AuthorsModel } = require("../models/authors");
 async function seedBooks() {
     // await mongoose.connect(process.env.MONGO_URL)
     
-    const existingBooks = await BooksModel.find({});
-    const existingAuthors = await BooksModel.find({});
+    // const existingAuthors = await BooksModel.find({});
+    // const existingBooks = await BooksModel.find({});
 
-    // await BooksModel.deleteMany({});
     // await AuthorsModel.deleteMany({});
+    // await BooksModel.deleteMany({});
 
-    if (existingBooks.length == 0 && existingAuthors.length == 0) {
-        await BooksModel.insertMany(bookItems);
-        await AuthorsModel.insertMany(authorItems);
-    }
+    // await AuthorsModel.insertMany(authorItems);
+
+    // const authors = await AuthorsModel.find();
+    // const authorsMap = new Map(authors.map(author => [author.name, author._id]));
+
+    // const booksWithAuthorIds = bookItems.map(book => ({
+    //     ...book,
+    //     author: [authorsMap.get(book.author)]
+    // }))
+    // await BooksModel.insertMany(booksWithAuthorIds);
+
 }
 
 const bookItems = [

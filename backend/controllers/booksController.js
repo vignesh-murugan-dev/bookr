@@ -1,4 +1,5 @@
 const { BooksModel } = require("../models/books")
+const { AuthorsModel } = require("../models/authors")
 
 async function getAllBooks(req, res) {
     try {
@@ -21,10 +22,10 @@ async function getBookWithId(req, res) {
 
 async function getBooksList(req, res) {
     const searchInput = req.params.searchInput;
-    console.log(searchInput);
     const regex = new RegExp(searchInput, 'i');
+    let books;
     try {
-        const books = await BooksModel.find(
+        books = await BooksModel.find(
             { title : {$regex: regex}}
         );
         res.json({books});
