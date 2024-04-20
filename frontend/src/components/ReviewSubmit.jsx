@@ -16,8 +16,7 @@ const ReviewSubmit = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post(`http://localhost:3001/api/reviews/submit/${bookId}`, {userReview, userRating, userName});
-    console.log(response?.data?.message);
+    await axios.post(`http://localhost:3001/api/reviews/submit/${bookId}`, {userReview, userRating, userName});
     dispatch(setUserReview(""));
     dispatch(setUserRating(""));
     dispatch(setUserName(""));
