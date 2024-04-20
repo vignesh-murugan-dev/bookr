@@ -1,11 +1,9 @@
-import { useSelector } from "react-redux";
 import {FaStar, FaStarHalfAlt} from "react-icons/fa";
 import {AiOutlineStar} from "react-icons/ai";
 
-const Star = () => {
+const Star = ({data}) => {
 
-    const bookData = useSelector((state) => state.books.bookData);
-    const stars = bookData?.avgRating?.$numberDecimal;
+    const stars = data?.rating;
 
     const starRating = Array.from({length: 5}, (ele, index) => {
         let number = index + 0.5;
@@ -18,7 +16,7 @@ const Star = () => {
                     ) : stars >= number ? (
                         <FaStarHalfAlt className="text-yellow-500" />
                     ) : (
-                        <AiOutlineStar className="text-yellow-500" />
+                        <AiOutlineStar className="text-yellow-500" fontSize={18}  />
                     )
                 }
             </span>
