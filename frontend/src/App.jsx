@@ -5,10 +5,11 @@ import Navbar from "./components/Navbar";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./store/store.js";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
-    <div className="p-4">
+    <div className="p-4 bg-blueGray-800 text-white">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/books/:bookId" element={<Book />} />
             </Routes>
+            <Footer />
           </BrowserRouter>
         </PersistGate>
       </Provider>
